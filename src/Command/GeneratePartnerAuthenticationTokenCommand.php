@@ -98,7 +98,7 @@ class GeneratePartnerAuthenticationTokenCommand extends Command
             }
 
             $io->success('Token generated successfully.');
-            $io->text($response->toArray()['access_token']);
+            $io->writeln($response->toArray()['access_token']);
 
             return Command::SUCCESS;
         } catch (HttpExceptionInterface|TransportExceptionInterface $exception) {

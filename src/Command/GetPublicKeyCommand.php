@@ -95,7 +95,7 @@ class GetPublicKeyCommand extends Command
             }
 
             $io->success('Public key getted successfully.');
-            $io->text($response->toArray()['response']['public_key']);
+            $io->writeln($response->toArray()['response']['public_key']);
 
             return Command::SUCCESS;
         } catch (HttpExceptionInterface|TransportExceptionInterface $exception) {

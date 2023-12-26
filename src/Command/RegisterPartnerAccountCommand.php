@@ -95,7 +95,7 @@ class RegisterPartnerAccountCommand extends Command
             }
 
             $io->success('Partner account registered successfully.');
-            $io->text($response->getContent());
+            $io->writeln($response->getContent());
 
             return Command::SUCCESS;
         } catch (HttpExceptionInterface|TransportExceptionInterface $exception) {

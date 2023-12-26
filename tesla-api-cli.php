@@ -5,6 +5,7 @@ require __DIR__.'/vendor/autoload.php';
 
 use Moynzzz\TeslaApi\Command\GenerateKeyPairCommand;
 use Moynzzz\TeslaApi\Command\GeneratePartnerAuthenticationTokenCommand;
+use Moynzzz\TeslaApi\Command\GenerateThirdPartyTokenOnBehalfOfCustomerCommand;
 use Moynzzz\TeslaApi\Command\GetPublicKeyCommand;
 use Moynzzz\TeslaApi\Command\RegisterPartnerAccountCommand;
 use Symfony\Component\Console\Application;
@@ -27,5 +28,7 @@ $application->add(new GeneratePartnerAuthenticationTokenCommand($traceableHttpCl
 $application->add(new RegisterPartnerAccountCommand($traceableHttpClient));
 
 $application->add(new GetPublicKeyCommand($traceableHttpClient));
+
+$application->add(new GenerateThirdPartyTokenOnBehalfOfCustomerCommand($traceableHttpClient));
 
 $application->run();
